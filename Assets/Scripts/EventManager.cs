@@ -10,15 +10,23 @@ public class EventManager : MonoBehaviour
      */
 
     public UnityEvent RunningRedLight;
-   
+    public UnityEvent WaitForPedestrians;
+
+
     void Start()
     {
         this.RunningRedLight.AddListener(runningRed);
+        this.WaitForPedestrians.AddListener(waitForPedestrians);
     }
 
 
     void runningRed()
     {
         Debug.Log("你闖紅燈了");
+    }
+
+    void waitForPedestrians()
+    {
+        Debug.Log("你未禮讓行人");
     }
 }
